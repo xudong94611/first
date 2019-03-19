@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cim.manageFile.dao.BaseStationDao">
+
+    <select id="get" resultType="com.cim.manageFile.domain.BaseStationDO">
+        select * from basestation where [index] = #{value}
+    </select>
+
+    <select id="list" resultType="com.cim.manageFile.domain.BaseStationDO">
+        select
+        <if test="offset != null and limit != null">
+        top ${limit}
+        </if>
+        * from basestation
+        <if test="offset != null and limit != null">
+        where [index] not in (select top ${offset} [index] from basestation
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order})
+            </when>
+            <otherwise>
+                order by [index] desc)
+            </otherwise>
+        </choose>
+        </if>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+            <otherwise>
+                order by [index] desc
+            </otherwise>
+        </choose>
+    </select>
+
+    <select id="count" resultType="int">
+        select count(*) from basestation
+    </select>
+
+    <insert id="save" parameterType="com.cim.manageFile.domain.BaseStationDO" useGeneratedKeys="true"
+            keyProperty="index">
+        insert into basestation
+        (
+        province,
+        city,
+        district,
+        street,
+        baseNo,
+        name,
+        filepath,
+        token,
+        tokentime,
+        versions,
+        longitude,
+        latitude,
+        address,
+        otherinfo,
+        basefeature
+        )
+        values
+        (
+        #{province},
+        #{city},
+        #{district},
+        #{street},
+        #{baseNo},
+        #{name},
+        #{filePath},
+        #{token},
+        #{tokenTime},
+        #{versions},
+        #{longitude},
+        #{latitude},
+        #{address},
+        #{otherInfo},
+        #{baseFeature}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.cim.manageFile.domain.BaseStationDO">
+        update basestation
+        <set>
+            <if test="province != null">province = #{province},</if>
+            <if test="city != null">city = #{city},</if>
+            <if test="district != null">district = #{district},</if>
+            <if test="street != null">street = #{street},</if>
+            <if test="baseNo != null">baseNo = #{baseNo},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="filePath != null">filepath = #{filePath},</if>
+            <if test="token != null">token = #{token},</if>
+            <if test="tokenTime != null">tokentime = #{tokenTime},</if>
+            <if test="versions != null">versions = #{versions},</if>
+            <if test="longitude != null">longitude = #{longitude},</if>
+            <if test="latitude != null">latitude = #{latitude},</if>
+            <if test="address != null">address = #{address},</if>
+            <if test="otherInfo != null">otherinfo = #{otherInfo},</if>
+            <if test="baseFeature != null">basefeature = #{baseFeature}</if>
+        </set>
+        where [index] = #{index}
+    </update>
+
+    <delete id="remove">
+        delete from basestation where [index] = #{value}
+    </delete>
+
+    <delete id="batchRemove">
+        delete from basestation where [index] in
+        <foreach item="userId" collection="array" open="(" separator="," close=")">
+            #{userId}
+        </foreach>
+    </delete>
+
+</mapper>

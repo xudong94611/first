@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="signupForm">
+                        <input id="serial" name="serial" th:value="${antennaAttributes.serial}"
+                               type="hidden">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">className：</label>
+                            <div class="col-sm-8">
+                                <input id="className" name="className"
+                                       th:value="${antennaAttributes.className}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">modelNumber：</label>
+                            <div class="col-sm-8">
+                                <input id="modelNumber" name="modelNumber"
+                                       th:value="${antennaAttributes.modelNumber}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">abbreviation：</label>
+                            <div class="col-sm-8">
+                                <input id="abbreviation" name="abbreviation"
+                                       th:value="${antennaAttributes.abbreviation}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">description：</label>
+                            <div class="col-sm-8">
+                                <input id="description" name="description"
+                                       th:value="${antennaAttributes.description}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">width：</label>
+                            <div class="col-sm-8">
+                                <input id="width" name="width"
+                                       th:value="${antennaAttributes.width}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">depth：</label>
+                            <div class="col-sm-8">
+                                <input id="depth" name="depth"
+                                       th:value="${antennaAttributes.depth}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">height：</label>
+                            <div class="col-sm-8">
+                                <input id="height" name="height"
+                                       th:value="${antennaAttributes.height}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">manufacture：</label>
+                            <div class="col-sm-8">
+                                <input id="manufacture" name="manufacture"
+                                       th:value="${antennaAttributes.manufacture}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">installationMode：</label>
+                            <div class="col-sm-8">
+                                <input id="installationMode" name="installationMode"
+                                       th:value="${antennaAttributes.installationMode}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">directivity：</label>
+                            <div class="col-sm-8">
+                                <input id="directivity" name="directivity"
+                                       th:value="${antennaAttributes.directivity}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">weight：</label>
+                            <div class="col-sm-8">
+                                <input id="weight" name="weight"
+                                       th:value="${antennaAttributes.weight}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">bandArray：</label>
+                            <div class="col-sm-8">
+                                <input id="bandArray" name="bandArray"
+                                       th:value="${antennaAttributes.bandArray}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">horizontalHPBW：</label>
+                            <div class="col-sm-8">
+                                <input id="horizontalHPBW" name="horizontalHPBW"
+                                       th:value="${antennaAttributes.horizontalHPBW}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">verticalHPBW：</label>
+                            <div class="col-sm-8">
+                                <input id="verticalHPBW" name="verticalHPBW"
+                                       th:value="${antennaAttributes.verticalHPBW}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">gain：</label>
+                            <div class="col-sm-8">
+                                <input id="gain" name="gain"
+                                       th:value="${antennaAttributes.gain}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">presetDownTilt：</label>
+                            <div class="col-sm-8">
+                                <input id="presetDownTilt" name="presetDownTilt"
+                                       th:value="${antennaAttributes.presetDownTilt}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">isElectrical：</label>
+                            <div class="col-sm-8">
+                                <input id="isElectrical" name="isElectrical"
+                                       th:value="${antennaAttributes.isElectrical}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">electricalDownTiltRange：</label>
+                            <div class="col-sm-8">
+                                <input id="electricalDownTiltRange" name="electricalDownTiltRange"
+                                       th:value="${antennaAttributes.electricalDownTiltRange}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">isSmart：</label>
+                            <div class="col-sm-8">
+                                <input id="isSmart" name="isSmart"
+                                       th:value="${antennaAttributes.isSmart}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button type="submit" class="btn btn-primary">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="include::footer"></div>
+<script type="text/javascript" src="/js/appjs/cimConfig/antennaAttributes/edit.js">
+</script>
+</body>
+</html>
