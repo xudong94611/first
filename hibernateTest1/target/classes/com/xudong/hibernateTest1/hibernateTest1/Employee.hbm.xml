@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <!-- 员工信息字段配置信息 -->
+ <hibernate-mapping>
+ 	<class name="com.xudong.hibernateTest1.hibernateTest1.Employee" table="employee_inf">
+ 		<id name="id" column="employee_id">
+ 			<generator class="identity"/>
+ 		</id>
+ 		<property name="name" type="string"/>
+ 		<property name="age" type="int"/>
+ 		<list name="schools" table="school">
+ 			<key column="employeeid" not-null="true"></key>
+ 			<list-index column="list_order"></list-index>
+ 			<element type="string" column="school_name"></element>
+ 		</list>
+ 	</class>
+ </hibernate-mapping>
