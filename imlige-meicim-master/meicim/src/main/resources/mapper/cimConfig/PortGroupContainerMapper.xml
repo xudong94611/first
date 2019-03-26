@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cim.cimConfig.dao.PortGroupContainerDao">
+
+    <select id="get" resultType="com.cim.cimConfig.domain.PortGroupContainerDO">
+        select * from portGroupContainer where serial = #{value}
+    </select>
+
+    <select id="list" resultType="com.cim.cimConfig.domain.PortGroupContainerDO">
+        select * from portGroupContainer
+        <if test="searchName != null and searchName.trim() != ''">
+            WHERE hostModuleNumber LIKE '%'+#{searchName}+'%'
+        </if>
+        ORDER BY serial desc
+        <if test="offset != null and limit != null">
+            OFFSET ${offset} ROWS FETCH NEXT ${limit} ROWS ONLY
+        </if>
+    </select>
+    <select id="list2" resultType="com.cim.cimConfig.domain.PortGroupContainerDO">
+        select
+        <if test="offset != null and limit != null">
+            top ${limit}
+        </if>
+        * from portGroupContainer
+        <if test="offset != null and limit != null">
+            where serial not in (select top ${offset} serial from portGroupContainer
+            <choose>
+                <when test="sort != null and sort.trim() != ''">
+                    order by ${sort} ${order})
+                </when>
+                <otherwise>
+                    order by serial desc)
+                </otherwise>
+            </choose>
+        </if>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+            <otherwise>
+                order by serial desc
+            </otherwise>
+        </choose>
+    </select>
+    <select id="count" resultType="int">
+        select count(*) from portGroupContainer
+    </select>
+
+    <insert id="save" parameterType="com.cim.cimConfig.domain.PortGroupContainerDO" useGeneratedKeys="true"
+            keyProperty="serial">
+        insert into portGroupContainer
+        (
+        hostModuleNumber,
+        type,
+        name,
+        portNumber,
+        featureGroup,
+        connectionDemandGroup,
+        allowedModelNumbersGroup,
+        suggestedCableInfoGroupArray,
+        direction,
+        objectRotation,
+        locationPointXs,
+        locationPointYs,
+        locationPointZs,
+        cableLengthInside,
+        isVirtual,
+        description
+        )
+        values
+        (
+        #{hostModuleNumber},
+        #{type},
+        #{name},
+        #{portNumber},
+        #{featureGroup},
+        #{connectionDemandGroup},
+        #{allowedModelNumbersGroup},
+        #{suggestedCableInfoGroupArray},
+        #{direction},
+        #{objectRotation},
+        #{locationPointXs},
+        #{locationPointYs},
+        #{locationPointZs},
+        #{cableLengthInside},
+        #{isVirtual},
+        #{description}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.cim.cimConfig.domain.PortGroupContainerDO">
+        update portGroupContainer
+        <set>
+            <if test="hostModuleNumber != null">hostModuleNumber = #{hostModuleNumber},</if>
+            <if test="type != null">type = #{type},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="portNumber != null">portNumber = #{portNumber},</if>
+            <if test="objectRotation != null">featureGroup = #{featureGroup},</if>
+            <if test="connectionDemandGroup != null">connectionDemandGroup = #{connectionDemandGroup},</if>
+            <if test="allowedModelNumbersGroup != null">allowedModelNumbersGroup = #{allowedModelNumbersGroup},</if>
+            <if test="suggestedCableInfoGroupArray != null">suggestedCableInfoGroupArray = #{suggestedCableInfoGroupArray},</if>
+            <if test="direction != null">direction = #{direction},</if>
+            <if test="objectRotation != null">objectRotation = #{objectRotation},</if>
+            <if test="locationPointXs != null">locationPointXs = #{locationPointXs},</if>
+            <if test="locationPointYs != null">locationPointYs = #{locationPointYs},</if>
+            <if test="locationPointZs != null">locationPointZs = #{locationPointZs},</if>
+            <if test="cableLengthInside != null">cableLengthInside = #{cableLengthInside},</if>
+            <if test="isVirtual != null">isVirtual = #{isVirtual},</if>
+            <if test="description != null">description = #{description}</if>
+        </set>
+        where serial = #{serial}
+    </update>
+
+    <delete id="remove">
+        delete from portGroupContainer where serial = #{value}
+    </delete>
+
+    <delete id="batchRemove">
+        delete from portGroupContainer where serial in
+        <foreach item="serial" collection="array" open="(" separator="," close=")">
+            #{serial}
+        </foreach>
+    </delete>
+
+</mapper>

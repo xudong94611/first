@@ -1,0 +1,24 @@
+mybatis:
+  mapper-locations: mapper/*Mapper.xml
+  typeAliasesPackage: com.cim.domain
+
+spring:
+  datasource:
+    cim:
+      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      jdbc-url: jdbc:sqlserver://192.168.1.55:52404;databaseName=cim;
+      username: cimuser
+      password: 123456a
+    cimconfig:
+      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      jdbc-url: jdbc:sqlserver://192.168.1.55:52404;databaseName=cimConfig;
+      username: cimuser
+      password: 123456a
+    managefile:
+      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      jdbc-url: jdbc:sqlserver://192.168.1.55:52404;databaseName=ManageFile;
+      username: cimuser
+      password: 123456a
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false

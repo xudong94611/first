@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="signupForm">
+                        <input id="serial" name="serial" th:value="${portAttributes.serial}"
+                               type="hidden">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">className：</label>
+                            <div class="col-sm-8">
+                                <input id="className" name="className"
+                                       th:value="${portAttributes.className}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">modelNumber：</label>
+                            <div class="col-sm-8">
+                                <input id="modelNumber" name="modelNumber"
+                                       th:value="${portAttributes.modelNumber}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">abbreviation：</label>
+                            <div class="col-sm-8">
+                                <input id="abbreviation" name="abbreviation"
+                                       th:value="${portAttributes.abbreviation}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">description：</label>
+                            <div class="col-sm-8">
+                                <input id="description" name="description"
+                                       th:value="${portAttributes.description}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">width：</label>
+                            <div class="col-sm-8">
+                                <input id="width" name="width"
+                                       th:value="${portAttributes.width}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">depth：</label>
+                            <div class="col-sm-8">
+                                <input id="depth" name="depth"
+                                       th:value="${portAttributes.depth}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">height：</label>
+                            <div class="col-sm-8">
+                                <input id="height" name="height"
+                                       th:value="${portAttributes.height}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">faceDepth：</label>
+                            <div class="col-sm-8">
+                                <input id="faceDepth" name="faceDepth"
+                                       th:value="${portAttributes.faceDepth}" class="form-control"
+                                type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">inOrOut：</label>
+                            <div class="col-sm-8">
+                                <input id="inOrOut" name="inOrOut"
+                                       th:value="${portAttributes.inOrOut}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button type="submit" class="btn btn-primary">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="include::footer"></div>
+<script type="text/javascript" src="/js/appjs/cimConfig/portAttributes/edit.js">
+</script>
+</body>
+</html>

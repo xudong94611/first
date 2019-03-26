@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="signupForm">
+                        <input id="serial" name="serial" th:value="${portGroupContainer.serial}"
+                               type="hidden">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">hostModuleNumber：</label>
+                            <div class="col-sm-8">
+                                <input id="hostModuleNumber" name="hostModuleNumber"
+                                       th:value="${portGroupContainer.hostModuleNumber}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">type：</label>
+                            <div class="col-sm-8">
+                                <input id="type" name="type"
+                                       th:value="${portGroupContainer.type}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">name：</label>
+                            <div class="col-sm-8">
+                                <input id="name" name="name"
+                                       th:value="${portGroupContainer.name}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">portNumber：</label>
+                            <div class="col-sm-8">
+                                <input id="portNumber" name="portNumber"
+                                       th:value="${portGroupContainer.portNumber}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">featureGroup：</label>
+                            <div class="col-sm-8">
+                                <input id="featureGroup" name="featureGroup"
+                                       th:value="${portGroupContainer.featureGroup}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">connectionDemandGroup：</label>
+                            <div class="col-sm-8">
+                                <input id="connectionDemandGroup" name="connectionDemandGroup"
+                                       th:value="${portGroupContainer.connectionDemandGroup}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">allowedModelNumbersGroup：</label>
+                            <div class="col-sm-8">
+                                <input id="allowedModelNumbersGroup" name="allowedModelNumbersGroup"
+                                       th:value="${portGroupContainer.allowedModelNumbersGroup}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">suggestedCableInfoGroupArray：</label>
+                            <div class="col-sm-8">
+                                <input id="suggestedCableInfoGroupArray" name="suggestedCableInfoGroupArray"
+                                       th:value="${portGroupContainer.suggestedCableInfoGroupArray}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">direction：</label>
+                            <div class="col-sm-8">
+                                <input id="direction" name="direction"
+                                       th:value="${portGroupContainer.direction}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">objectRotation：</label>
+                            <div class="col-sm-8">
+                                <input id="objectRotation" name="objectRotation"
+                                       th:value="${portGroupContainer.objectRotation}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">locationPointXs：</label>
+                            <div class="col-sm-8">
+                                <input id="locationPointXs" name="locationPointXs"
+                                       th:value="${portGroupContainer.locationPointXs}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">locationPointYs：</label>
+                            <div class="col-sm-8">
+                                <input id="locationPointYs" name="locationPointYs"
+                                       th:value="${portGroupContainer.locationPointYs}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">locationPointZs：</label>
+                            <div class="col-sm-8">
+                                <input id="locationPointZs" name="locationPointZs"
+                                       th:value="${portGroupContainer.locationPointZs}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">cableLengthInside：</label>
+                            <div class="col-sm-8">
+                                <input id="cableLengthInside" name="cableLengthInside"
+                                       th:value="${portGroupContainer.cableLengthInside}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">isVirtual：</label>
+                            <div class="col-sm-8">
+                                <input id="isVirtual" name="isVirtual"
+                                       th:value="${portGroupContainer.isVirtual}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">description：</label>
+                            <div class="col-sm-8">
+                                <input id="description" name="description"
+                                       th:value="${portGroupContainer.description}" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button type="submit" class="btn btn-primary">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="include::footer"></div>
+<script type="text/javascript" src="/js/appjs/cimConfig/portGroupContainer/edit.js">
+</script>
+</body>
+</html>

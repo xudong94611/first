@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="signupForm">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">province：</label>
+                            <div class="col-sm-8">
+                                <input id="province" name="province"
+                                       class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">city：</label>
+                            <div class="col-sm-8">
+                                <input id="city" name="city"
+                                       class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">district：</label>
+                            <div class="col-sm-8">
+                                <input id="district" name="district" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">street：</label>
+                            <div class="col-sm-8">
+                                <input id="street" name="street" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">baseNo：</label>
+                            <div class="col-sm-8">
+                                <input id="baseNo" name="baseNo" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">name：</label>
+                            <div class="col-sm-8">
+                                <input id="name" name="name" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">filePath：</label>
+                            <div class="col-sm-8">
+                                <input id="filePath" name="filePath" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">token：</label>
+                            <div class="col-sm-8">
+                                <input id="token" name="token" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">tokenTime：</label>
+                            <div class="col-sm-8">
+                                <input id="tokenTime" name="tokenTime" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">versions：</label>
+                            <div class="col-sm-8">
+                                <input id="versions" name="versions" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">longitude：</label>
+                            <div class="col-sm-8">
+                                <input id="longitude" name="longitude" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">latitude：</label>
+                            <div class="col-sm-8">
+                                <input id="latitude" name="latitude" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">address：</label>
+                            <div class="col-sm-8">
+                                <input id="address" name="address" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">otherInfo：</label>
+                            <div class="col-sm-8">
+                                <input id="otherInfo" name="otherInfo" class="form-control"
+                                type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">baseFeature：</label>
+                            <div class="col-sm-8">
+                                <input id="baseFeature" name="baseFeature" class="form-control"
+                                       type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button type="submit" class="btn btn-primary">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="include::footer"></div>
+<script type="text/javascript" src="/js/appjs/manageFile/add.js">
+</script>
+</body>
+</html>

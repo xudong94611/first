@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cim.cimConfig.dao.ModuleAttributesDao">
+
+    <select id="get" resultType="com.cim.cimConfig.domain.ModuleAttributesDO">
+        select * from moduleAttributes where Serial = #{value}
+    </select>
+
+    <select id="list" resultType="com.cim.cimConfig.domain.ModuleAttributesDO">
+        select * from moduleAttributes
+        <if test="searchName != null and searchName.trim() != ''">
+            WHERE modelNumber LIKE '%'+#{searchName}+'%'
+        </if>
+        ORDER BY serial desc
+        <if test="offset != null and limit != null">
+            OFFSET ${offset} ROWS FETCH NEXT ${limit} ROWS ONLY
+        </if>
+    </select>
+    <select id="list2" resultType="com.cim.cimConfig.domain.ModuleAttributesDO">
+        select
+        <if test="offset != null and limit != null">
+            top ${limit}
+        </if>
+        * from moduleAttributes
+        <if test="offset != null and limit != null">
+            where Serial not in (select top ${offset} Serial from moduleAttributes
+            <choose>
+                <when test="sort != null and sort.trim() != ''">
+                    order by ${sort} ${order})
+                </when>
+                <otherwise>
+                    order by Serial desc)
+                </otherwise>
+            </choose>
+        </if>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+            <otherwise>
+                order by Serial desc
+            </otherwise>
+        </choose>
+    </select>
+    <select id="count" resultType="int">
+        select count(*) from moduleAttributes
+    </select>
+
+    <insert id="save" parameterType="com.cim.cimConfig.domain.ModuleAttributesDO" useGeneratedKeys="true"
+            keyProperty="Serial">
+        insert into moduleAttributes
+        (
+        className,
+        modelNumber,
+        abbreviation,
+        description,
+        manufacture,
+        capacityArray,
+        price,
+        serviceLife,
+        width,
+        depth,
+        height,
+        faceDepth,
+        weight,
+        ratedPower,
+        label,
+        unitName,
+        quotaSerial
+        )
+        values
+        (
+        #{className},
+        #{modelNumber},
+        #{abbreviation},
+        #{description},
+        #{manufacture},
+        #{capacityArray},
+        #{price},
+        #{serviceLife},
+        #{width},
+        #{depth},
+        #{height},
+        #{faceDepth},
+        #{weight},
+        #{ratedPower},
+        #{label},
+        #{unitName},
+        #{quotaSerial}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.cim.cimConfig.domain.ModuleAttributesDO">
+        update moduleAttributes
+        <set>
+            <if test="className != null">className = #{className},</if>
+            <if test="modelNumber != null">modelNumber = #{modelNumber},</if>
+            <if test="abbreviation != null">abbreviation = #{abbreviation},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="manufacture != null">manufacture = #{manufacture},</if>
+            <if test="capacityArray != null">capacityArray = #{capacityArray},</if>
+            <if test="price != null">price = #{price},</if>
+            <if test="serviceLife != null">serviceLife = #{serviceLife},</if>
+            <if test="width != null">width = #{width},</if>
+            <if test="depth != null">depth = #{depth},</if>
+            <if test="height != null">height = #{height},</if>
+            <if test="faceDepth != null">faceDepth = #{faceDepth},</if>
+            <if test="weight != null">weight = #{weight},</if>
+            <if test="ratedPower != null">ratedPower = #{ratedPower},</if>
+            <if test="label != null">label = #{label},</if>
+            <if test="unitName != null">unitName = #{unitName},</if>
+            <if test="quotaSerial != null">quotaSerial = #{quotaSerial},</if>
+        </set>
+        where Serial = #{serial}
+    </update>
+
+    <delete id="remove">
+        delete from moduleAttributes where Serial = #{value}
+    </delete>
+
+    <delete id="batchRemove">
+        delete from moduleAttributes where Serial in
+        <foreach item="serial" collection="array" open="(" separator="," close=")">
+            #{serial}
+        </foreach>
+    </delete>
+
+</mapper>

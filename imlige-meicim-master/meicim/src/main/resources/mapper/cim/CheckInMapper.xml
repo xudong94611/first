@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cim.cim.dao.CheckInDao">
+
+    <select id="get" resultType="com.cim.cim.domain.CheckInDO">
+        select * from checkin where userid = #{value}
+    </select>
+    
+    <select id="list" resultType="com.cim.cim.domain.CheckInDO">
+        select * from checkin
+        <if test="searchName != null and searchName.trim() != ''">
+            WHERE chsname LIKE '%'+#{searchName}+'%'
+        </if>
+        ORDER BY username
+        <if test="offset != null and limit != null">
+            OFFSET ${offset} ROWS FETCH NEXT ${limit} ROWS ONLY
+        </if>
+        
+    </select>
+
+    <select id="count" resultType="int">
+        select count(*) from checkin
+    </select>
+
+    <insert id="save" parameterType="com.cim.cim.domain.CheckInDO" useGeneratedKeys="true"
+            keyProperty="userid">
+        insert into checkin
+        (
+        username,
+        password,
+        hardcode,
+        chsname,
+        checkers,
+        logincount,
+        part,
+        version
+        )
+        values
+        (
+        #{username},
+        #{password},
+        #{hardcode},
+        #{chsName},
+        #{checkers},
+        #{loginCount},
+        #{part},
+        #{version}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.cim.cim.domain.CheckInDO">
+        update checkin
+        <set>
+            <if test="username != null">username = #{username},</if>
+            <if test="password != null">password = #{password},</if>
+            <if test="hardcode != null">hardcode = #{hardcode},</if>
+            <if test="chsName != null">chsname = #{chsName},</if>
+            <if test="checkers != null">checkers = #{checkers},</if>
+            <if test="loginCount != null">logincount = #{loginCount},</if>
+            <if test="part != null">part = #{part},</if>
+            <if test="version != null">version = #{version}</if>
+        </set>
+        where userid = #{userId}
+    </update>
+
+    <delete id="remove">
+        delete from checkin where userid = #{value}
+    </delete>
+
+    <delete id="batchRemove">
+        delete from checkin where userid in
+        <foreach item="userId" collection="array" open="(" separator="," close=")">
+            #{userId}
+        </foreach>
+    </delete>
+
+</mapper>
