@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<form class="form-horizontal m-t" id="signupForm">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">drawingType：</label>
+								<div class="col-sm-8">
+									<input id="drawingType" name="drawingType" class="form-control"
+										type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">signTypeAll：</label>
+								<div class="col-sm-8">
+									<input id="signTypeAll" name="signTypeAll" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">signCaptionAll：</label>
+								<div class="col-sm-8">
+									<input id="signCaptionAll" name="signCaptionAll"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">signWidth：</label>
+								<div class="col-sm-8">
+									<input id="signWidth" name="signWidth" class="form-control"
+										type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">captionWidth：</label>
+								<div class="col-sm-8">
+									<input id="captionWidth" name="captionWidth" class="form-control"
+										type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">widthStep：</label>
+								<div class="col-sm-8">
+									<input id="widthStep" name="widthStep" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">heightStep：</label>
+								<div class="col-sm-8">
+									<input id="heightStep" name="heightStep"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">domainWidth：</label>
+								<div class="col-sm-8">
+									<input id="domainWidth" name="domainWidth"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">domainHeight：</label>
+								<div class="col-sm-8">
+									<input id="domainHeight" name="domainHeight"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">originalPoint：</label>
+								<div class="col-sm-8">
+									<input id="originalPoint" name="originalPoint" class="form-control"
+										type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">titleFormatName：</label>
+								<div class="col-sm-8">
+									<input id="titleFormatName" name="titleFormatName"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">contentFormatName：</label>
+								<div class="col-sm-8">
+									<input id="contentFormatName" name="contentFormatName" class="form-control"
+										type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-8 col-sm-offset-3">
+									<button type="submit" class="btn btn-primary">提交</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:include="include::footer"></div>
+	<script type="text/javascript"
+		src="/js/appjs/cimConfig/conventionalSignContainerAttributes/add.js">
+		
+	</script>
+</body>
+</html>

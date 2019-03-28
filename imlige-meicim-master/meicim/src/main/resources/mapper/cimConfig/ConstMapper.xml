@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cim.cimConfig.dao.ConstDao">
+
+    <select id="get" resultType="com.cim.cimConfig.domain.ConstDO">
+        select * from Const where serial = #{value}
+    </select>
+    <select id="list" resultType="com.cim.cimConfig.domain.ConstDO">
+        select * from Const
+        <if test="searchName != null and searchName.trim() != ''">
+            WHERE string LIKE '%'+#{searchName}+'%'
+        </if>
+        ORDER BY serial desc
+        <if test="offset != null and limit != null">
+            OFFSET ${offset} ROWS FETCH NEXT ${limit} ROWS ONLY
+        </if>
+    </select>
+    <select id="list2" resultType="com.cim.cimConfig.domain.ConstDO">
+        select
+        <if test="offset != null and limit != null">
+        top ${limit}
+        </if>
+        * from Const
+        <if test="offset != null and limit != null">
+        where serial not in (select top ${offset} serial from Const
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order})
+            </when>
+            <otherwise>
+                order by serial desc)
+            </otherwise>
+        </choose>
+        </if>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+            <otherwise>
+                order by serial desc
+            </otherwise>
+        </choose>
+    </select>
+
+    <select id="count" resultType="int">
+        select count(*) from Const
+    </select>
+
+    <insert id="save" parameterType="com.cim.cimConfig.domain.ConstDO" useGeneratedKeys="true"
+            keyProperty="serial">
+        insert into Const
+        (
+        string,
+        value
+        )
+        values
+        (
+        #{string},
+        #{value}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.cim.cimConfig.domain.ConstDO">
+        update Const
+        <set>
+            <if test="string != null">string = #{string},</if>
+            <if test="value != null">value = #{value}</if>
+        </set>
+        where serial = #{serial}
+    </update>
+
+    <delete id="remove">
+        delete from Const where serial = #{value}
+    </delete>
+
+    <delete id="batchRemove">
+        delete from Const where serial in
+        <foreach item="serial" collection="array" open="(" separator="," close=")">
+            #{serial}
+        </foreach>
+    </delete>
+
+</mapper>

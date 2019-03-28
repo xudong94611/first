@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cim.cimConfig.dao.CaptionArrayDefinitionDao">
+
+	<select id="get"
+		resultType="com.cim.cimConfig.domain.CaptionArrayDefinitionDO">
+		select * from captionArrayDefinition where serial = #{value}
+	</select>
+	<select id="list"
+		resultType="com.cim.cimConfig.domain.CaptionArrayDefinitionDO">
+		select * from captionArrayDefinition
+		<if test="searchName != null and searchName.trim() != ''">
+			WHERE drawingType LIKE '%'+#{searchName}+'%'
+		</if>
+		ORDER BY serial desc
+		<if test="offset != null and limit != null">
+			OFFSET ${offset} ROWS FETCH NEXT ${limit} ROWS ONLY
+		</if>
+	</select>
+	<select id="list2"
+		resultType="com.cim.cimConfig.domain.CaptionArrayDefinitionDO">
+		select
+		<if test="offset != null and limit != null">
+			top ${limit}
+		</if>
+		* from captionArrayDefinition
+		<if test="offset != null and limit != null">
+			where serial not in (select top ${offset} serial from
+			captionArrayDefinition
+			<choose>
+				<when test="sort != null and sort.trim() != ''">
+					order by ${sort} ${order})
+				</when>
+				<otherwise>
+					order by serial desc)
+				</otherwise>
+			</choose>
+		</if>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
+			<otherwise>
+				order by serial desc
+			</otherwise>
+		</choose>
+	</select>
+
+	<select id="count" resultType="int">
+		select count(*) from captionArrayDefinition
+	</select>
+
+	<insert id="save"
+		parameterType="com.cim.cimConfig.domain.CaptionArrayDefinitionDO"
+		useGeneratedKeys="true" keyProperty="serial">
+		insert into captionArrayDefinition
+		(
+		drawingType,
+		projectManager,
+		majorManager,
+		designer,
+		proofreader,
+		approver,
+		lengthUnit,
+		scaling,
+		date,
+		drawingName,
+		drawingIdentifier,
+		[end]
+		)
+		values
+		(
+		#{drawingType},
+		#{projectManager},
+		#{majorManager},
+		#{designer},
+		#{proofreader},
+		#{approver},
+		#{lengthUnit},
+		#{scaling},
+		#{date},
+		#{drawingName},
+		#{drawingIdentifier},
+		#{end}
+		)
+	</insert>
+
+	<update id="update"
+		parameterType="com.cim.cimConfig.domain.CaptionArrayDefinitionDO">
+		update captionArrayDefinition
+		<set>
+			<if test="drawingType != null">drawingType = #{drawingType},</if>
+			<if test="projectManager != null">projectManager = #{projectManager},</if>
+			<if test="majorManager != null">majorManager = #{majorManager},</if>
+			<if test="designer != null">designer = #{designer},</if>
+			<if test="proofreader != null">proofreader = #{proofreader},</if>
+			<if test="approver != null">approver = #{approver},</if>
+			<if test="lengthUnit != null">lengthUnit = #{lengthUnit},</if>
+			<if test="scaling != null">scaling = #{scaling},</if>
+			<if test="date != null">date = #{date},</if>
+			<if test="drawingName != null">drawingName = #{drawingName},</if>
+			<if test="drawingIdentifier != null">drawingIdentifier = #{drawingIdentifier},</if>
+			<if test="end != null">[end] = #{end}</if>
+		</set>
+		where serial = #{serial}
+	</update>
+
+	<delete id="remove">
+		delete from captionArrayDefinition where serial = #{value}
+	</delete>
+
+	<delete id="batchRemove">
+		delete from captionArrayDefinition where serial in
+		<foreach item="serial" collection="array" open="("
+			separator="," close=")">
+			#{serial}
+		</foreach>
+	</delete>
+
+</mapper>

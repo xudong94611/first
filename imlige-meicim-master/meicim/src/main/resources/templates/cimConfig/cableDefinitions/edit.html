@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<form class="form-horizontal m-t" id="signupForm">
+							<input id="serial" name="serial"
+								th:value="${cableDefinitions.serial}" type="hidden">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">modelNumber：</label>
+								<div class="col-sm-8">
+									<input id="modelNumber" name="modelNumber"
+										th:value="${cableDefinitions.modelNumber}"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">type：</label>
+								<div class="col-sm-8">
+									<input id="type" name="type"
+										th:value="${cableDefinitions.type}" class="form-control"
+										type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">abbreviation：</label>
+								<div class="col-sm-8">
+									<input id="abbreviation" name="abbreviation"
+										th:value="${cableDefinitions.abbreviation}"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">description：</label>
+								<div class="col-sm-8">
+									<input id="description" name="description"
+										th:value="${cableDefinitions.description}"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">texture：</label>
+								<div class="col-sm-8">
+									<input id="texture" name="texture"
+										th:value="${cableDefinitions.texture}" class="form-control"
+										type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">color：</label>
+								<div class="col-sm-8">
+									<input id="color" name="color"
+										th:value="${cableDefinitions.color}" class="form-control"
+										type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">minTurningRadius：</label>
+								<div class="col-sm-8">
+									<input id="minTurningRadius" name="minTurningRadius"
+										th:value="${cableDefinitions.minTurningRadius}"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">crossShapeType：</label>
+								<div class="col-sm-8">
+									<input id="crossShapeType" name="crossShapeType"
+										th:value="${cableDefinitions.crossShapeType}"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">sideLengthArray：</label>
+								<div class="col-sm-8">
+									<input id="sideLengthArray" name="sideLengthArray"
+										th:value="${cableDefinitions.sideLengthArray}"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">coreArray：</label>
+								<div class="col-sm-8">
+									<input id="coreArray" name="coreArray"
+										th:value="${cableDefinitions.coreArray}" class="form-control"
+										type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">coreCrossSectionAreas：</label>
+								<div class="col-sm-8">
+									<input id="coreCrossSectionAreas" name="coreCrossSectionAreas"
+										th:value="${cableDefinitions.coreCrossSectionAreas}"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">jointModels：</label>
+								<div class="col-sm-8">
+									<input id="jointModels" name="jointModels"
+										th:value="${cableDefinitions.jointModels}"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">centerLocations：</label>
+								<div class="col-sm-8">
+									<input id="centerLocations" name="centerLocations"
+										th:value="${cableDefinitions.centerLocations}"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">width：</label>
+								<div class="col-sm-8">
+									<input id="width" name="width"
+										th:value="${cableDefinitions.width}" class="form-control"
+										type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">unitName：</label>
+								<div class="col-sm-8">
+									<input id="unitName" name="unitName"
+										th:value="${cableDefinitions.unitName}" class="form-control"
+										type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-8 col-sm-offset-3">
+									<button type="submit" class="btn btn-primary">提交</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:include="include::footer"></div>
+	<script type="text/javascript"
+		src="/js/appjs/cimConfig/cableDefinitions/edit.js">
+		
+	</script>
+</body>
+</html>
