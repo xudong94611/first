@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+E:\ДњТы\taotoShop\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2169759334.index
-639683156.index
-2902382722.index
-3494590309.index
-2334048843.index
-3609442454.index
-1083750738.index

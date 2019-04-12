@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-E:\ДњТы\taotoShop\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1083750738.index
-\taotao-manager-web\src\main\java
