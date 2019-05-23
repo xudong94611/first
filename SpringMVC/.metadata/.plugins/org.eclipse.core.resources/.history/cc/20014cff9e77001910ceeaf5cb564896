@@ -1,0 +1,12 @@
+package com.itheima.springmvc.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.itheima.springmvc.mapper.ItemsMapper;
+
+@Service
+public class ItemServiceImpl {
+	@Autowired
+	ItemsMapper itemsMapper;
+}

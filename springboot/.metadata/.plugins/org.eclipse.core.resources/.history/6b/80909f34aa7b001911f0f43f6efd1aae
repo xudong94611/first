@@ -1,0 +1,7 @@
+package com.example.demo.servcie.impl;
+
+import com.example.demo.servcie.UserService;
+
+public class UserServiceImpl implements UserService {
+
+}

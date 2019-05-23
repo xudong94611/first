@@ -1,0 +1,17 @@
+package com.example.demo.servcie.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.pojo.User;
+import com.example.demo.servcie.UserService;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Override
+	public User selectByPrimaryKey(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

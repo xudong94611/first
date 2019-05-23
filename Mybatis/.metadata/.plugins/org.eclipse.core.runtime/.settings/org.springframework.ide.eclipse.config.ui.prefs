@@ -1,0 +1,3 @@
+//com.springsource.config.ui.prefs.activePageIndex\:/mybatis-spring-2/src/applicationContext.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/mybatis-spring/src/applicationContext.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage id\="com.springsource.sts.config.ui.editors.namespaces" index\="0" kind\="formPage"/>
+eclipse.preferences.version=1

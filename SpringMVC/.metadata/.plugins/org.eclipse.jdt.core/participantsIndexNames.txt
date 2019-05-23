@@ -1,0 +1,11 @@
+INDEX VERSION 1.131
+E:\代码\SpringMVC\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1303279800.index
+\springmvc-mybatis01\src
+E:\代码\SpringMVC\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1320535646.index
+\SSM-Template\src
+E:\代码\SpringMVC\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2823723855.index
+\springmvc-mybatis\src
+E:\代码\SpringMVC\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\363909520.index
+\springmvc-mybatis02\src
+E:\代码\SpringMVC\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1473649059.index
+\springMVCdemo1\src

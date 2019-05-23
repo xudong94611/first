@@ -1,0 +1,37 @@
+package com.example.demo.controller;
+
+import java.util.HashMap;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.pojo.user;
+
+@RestController("/first")
+public class firstController {
+
+	// 显示“hello world”
+	@RequestMapping("/hello")
+	public String showHello() {
+		return "hello world";
+	}
+
+	// 显示对象json串
+	@RequestMapping("/pojo")
+	public user showUser() {
+		user user = new user();
+		user.setName("xd");
+		user.setAge(18);
+		user.setSex("男");
+		return user;
+	}
+
+	// 显示map
+	@RequestMapping("/map")
+	public user showMap() {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("姓名", "徐栋");
+		map.put("age", 18);
+		return map;
+	}
+}
